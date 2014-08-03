@@ -1,0 +1,137 @@
+fileFormatVersion: 2
+guid: f9a74191f99ac9a41ba8f177409ba369
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: ob_03000610
+    100002: ob_03000FB8
+    100004: ob_030011B8
+    100006: ob_03001238
+    100008: ob_03001278
+    100010: ob_030012B8
+    100012: ob_030016C0
+    100014: ob_03001880
+    100016: ob_03001C40
+    100018: ob_03001D40
+    100020: ob_03002008
+    100022: ob_030021D8
+    100024: ob_03002510
+    100026: ob_03002590
+    100028: ob_03002890
+    100030: //RootNode
+    400000: ob_03000610
+    400002: ob_03000FB8
+    400004: ob_030011B8
+    400006: ob_03001238
+    400008: ob_03001278
+    400010: ob_030012B8
+    400012: ob_030016C0
+    400014: ob_03001880
+    400016: ob_03001C40
+    400018: ob_03001D40
+    400020: ob_03002008
+    400022: ob_030021D8
+    400024: ob_03002510
+    400026: ob_03002590
+    400028: ob_03002890
+    400030: //RootNode
+    2300000: ob_03000610
+    2300002: ob_03000FB8
+    2300004: ob_030011B8
+    2300006: ob_03001238
+    2300008: ob_03001278
+    2300010: ob_030012B8
+    2300012: ob_030016C0
+    2300014: ob_03001880
+    2300016: ob_03001C40
+    2300018: ob_03001D40
+    2300020: ob_03002008
+    2300022: ob_030021D8
+    2300024: ob_03002510
+    2300026: ob_03002590
+    2300028: ob_03002890
+    3300000: ob_03000610
+    3300002: ob_03000FB8
+    3300004: ob_030011B8
+    3300006: ob_03001238
+    3300008: ob_03001278
+    3300010: ob_030012B8
+    3300012: ob_030016C0
+    3300014: ob_03001880
+    3300016: ob_03001C40
+    3300018: ob_03001D40
+    3300020: ob_03002008
+    3300022: ob_030021D8
+    3300024: ob_03002510
+    3300026: ob_03002590
+    3300028: ob_03002890
+    4300000: ob_030021D8
+    4300002: ob_03002008
+    4300004: ob_03001D40
+    4300006: ob_03001C40
+    4300008: ob_03002890
+    4300010: ob_03002590
+    4300012: ob_03002510
+    4300014: ob_030012B8
+    4300016: ob_03001278
+    4300018: ob_03001238
+    4300020: ob_030011B8
+    4300022: ob_03000FB8
+    4300024: ob_03001880
+    4300026: ob_030016C0
+    4300028: ob_03000610
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .00999999978
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
