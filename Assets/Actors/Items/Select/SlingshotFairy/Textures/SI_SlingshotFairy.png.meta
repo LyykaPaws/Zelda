@@ -1,9 +1,8 @@
 fileFormatVersion: 2
-guid: 483f3137e4dedd04aae75b744c05a5b8
+guid: d533bacc32d246e44bd9a019feba066c
 TextureImporter:
   fileIDToRecycleName:
-    21300000: THE LEGEND OF DEBUG#C85596BC#0#3_all
-    21300002: SI_SlingshotFairy
+    21300000: SI_SlingshotFairy
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -23,7 +22,7 @@ TextureImporter:
   grayScaleToAlpha: 0
   generateCubemap: 0
   seamlessCubemap: 0
-  textureFormat: -1
+  textureFormat: -3
   maxTextureSize: 1024
   textureSettings:
     filterMode: -1

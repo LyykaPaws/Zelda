@@ -1,8 +1,8 @@
 fileFormatVersion: 2
-guid: bb9874716b55a78499d48c08e0647ba4
+guid: b5a661ffbb74e4c49b6d84241300228b
 TextureImporter:
   fileIDToRecycleName:
-    21300000: THE LEGEND OF DEBUG#F5D6EB9F#0#3_all
+    21300000: Deku Stick
     21300002: SI_DekuStick
   serializedVersion: 2
   mipmaps:
@@ -23,7 +23,7 @@ TextureImporter:
   grayScaleToAlpha: 0
   generateCubemap: 0
   seamlessCubemap: 0
-  textureFormat: -1
+  textureFormat: -3
   maxTextureSize: 1024
   textureSettings:
     filterMode: -1
