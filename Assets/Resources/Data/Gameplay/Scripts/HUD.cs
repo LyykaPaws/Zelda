@@ -33,7 +33,7 @@ public class HUD : MonoBehaviour
 			Color c1 = Color.white, c2 = Color.white;
 			for (int i = 0; i < 4; i++)
 			{
-				Transform ss = menu.GetChild(i);
+				Transform ss = menu.GetChild(i).Find("Background");
 				if (i == 0)	// Equip
 				{
 					c1 = new Color(.039216f, .196078f, .156863f);
