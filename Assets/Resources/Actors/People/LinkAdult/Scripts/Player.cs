@@ -11,16 +11,35 @@ public class Player : MonoBehaviour
         Rolling,
         Falling
     };
+    public enum LinkSoundsEnum
+    {
+        Step0,
+        Step1,
+        Step2
+    };
     public UnityEngine.Camera mainCamera;
-    private CameraController cameraController;
+    private MainCamera cameraController;
     public LinkStates state;
     public Vector3 lastPosition;
+    private AudioSource[] linkSounds = new AudioSource[8];
+    private int stepCounter = 0;
+    public int health, maxHealth;
 	// Use this for initialization
 	void Start() 
     {
         mainCamera = GameObject.Find("PositionCam/DefaultCam").camera;
-        cameraController = GameObject.Find("SC_Camera").GetComponent<CameraController>();
+        cameraController = GameObject.Find("SC_Camera").GetComponent<MainCamera>();
         lastPosition = transform.position;
+        maxHealth = 12;
+        health = maxHealth;
+        
+        // Load sound effects
+        linkSounds[(int)LinkSoundsEnum.Step0] = gameObject.AddComponent<AudioSource>();
+        linkSounds[(int)LinkSoundsEnum.Step0].clip = Resources.Load<AudioClip>("Audio/SFX/Footsteps/OOT_Steps_Dirt1");
+        linkSounds[(int)LinkSoundsEnum.Step1] = gameObject.AddComponent<AudioSource>();
+        linkSounds[(int)LinkSoundsEnum.Step1].clip = Resources.Load<AudioClip>("Audio/SFX/Footsteps/OOT_Steps_Dirt2");
+        linkSounds[(int)LinkSoundsEnum.Step2] = gameObject.AddComponent<AudioSource>();
+        linkSounds[(int)LinkSoundsEnum.Step2].clip = Resources.Load<AudioClip>("Audio/SFX/Footsteps/OOT_Steps_Dirt3");
 	}
 	
 	// Update is called once per frame
@@ -93,15 +112,22 @@ public class Player : MonoBehaviour
                 transform.position += (transform.forward * 1.0f) + (transform.up * 0.80f);
             }
         }
-        Debug.Log("Topmost " + hitTopMost.distance);
-        Debug.Log("Top " + hitTop.distance);
-        Debug.Log("Mid " + hitMid.distance);
+        //Debug.Log("Topmost " + hitTopMost.distance);
+        //Debug.Log("Top " + hitTop.distance);
+        //Debug.Log("Mid " + hitMid.distance);
 
 
 
         //Debug.Log("Topmost " + topmostRaycast);
         //Debug.Log("Top " + topRaycast);
         //Debug.Log("Mid " + midRaycast);
+    }
+
+    void StepSFX()
+    {
+        stepCounter++;
+        if (linkSounds[stepCounter % 2].isPlaying == false)
+            linkSounds[stepCounter % 2].Play();
     }
 
     void UpdateIdle()
@@ -117,13 +143,14 @@ public class Player : MonoBehaviour
 
 		if (h == 0.0f && v == 0.0f)
 			state = LinkStates.Idle;
+        StepSFX();
 		ObstacleTest();
 		Vector3 cameraEulerAngles = mainCamera.transform.eulerAngles;
 		cameraEulerAngles.x = 0;
 		cameraEulerAngles.z = 0;
 		if (v != 0.0f)
 		{
-			if (cameraController.isZTargeting)
+			if (cameraController.isTargeting)
 				transform.position += (mainCamera.transform.forward * v * 4.0f) * Time.deltaTime;
 			else
 			{
@@ -135,7 +162,7 @@ public class Player : MonoBehaviour
 		}
 		if (h != 0.0f)
         {
-            if (cameraController.isZTargeting)
+            if (cameraController.isTargeting)
                 transform.position += (mainCamera.transform.right * h * 4.0f) * Time.deltaTime;
             else
 			{
@@ -145,7 +172,7 @@ public class Player : MonoBehaviour
 					transform.eulerAngles = cameraEulerAngles + new Vector3(0, 90, 0);
 			}
         }
-        if (!cameraController.isZTargeting)
+        if (!cameraController.isTargeting)
             transform.position += (transform.forward * 4.0f) * Time.deltaTime;
     }
 }
