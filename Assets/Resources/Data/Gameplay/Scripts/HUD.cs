@@ -14,6 +14,10 @@ public class HUD : MonoBehaviour
 	private float rotation = 0.0f;
 	private float targetRot = 0.0f;
 
+	private float scaleBoost, scaleDir;
+	private Vector3 baseScale = new Vector3(15.0f, 15.0f, 1.0f);
+	private int playerOldHearts;
+
     AudioSource[] menuSounds;
 
 	void Start()
@@ -99,8 +103,19 @@ public class HUD : MonoBehaviour
         menuSounds[2].clip = Resources.Load<AudioClip>("Audio/SFX/Menus/OOT_PauseMenu_Turn_Left");
         menuSounds[3] = gameObject.AddComponent<AudioSource>();
         menuSounds[3].clip = Resources.Load<AudioClip>("Audio/SFX/Menus/OOT_PauseMenu_Turn_Right");
+		
+		scaleBoost = 1.0f;
+		scaleDir = 0.005f;
+		playerOldHearts = player.health;
+
+		GameObject heartContainerObject = GameObject.Find("Health");
+		for (int i = 0; i < heartContainerObject.transform.childCount; i++)
+		{
+			GameObject.DestroyObject(heartContainerObject.transform.GetChild(i).gameObject);
+		}
 	}
-	
+
+
 	void Update()
 	{
 		if (guiCam != null)
@@ -108,6 +123,7 @@ public class HUD : MonoBehaviour
 			transform.localScale = new Vector3(guiCam.aspect, 1, 1);
 			if (menu != null)
 				menu.localScale = new Vector3(guiCam.aspect, 1, guiCam.aspect);
+			DrawHearts();
 		}
 		if (menu != null)
 		{
@@ -156,5 +172,82 @@ public class HUD : MonoBehaviour
 					rotSpeed = 0.0f;
 			}
 		}
+	}
+
+	
+	void DrawHearts()
+	{
+		if (scaleBoost > 1.2f)
+		{
+			scaleDir = -0.005f;
+		}
+		if (scaleBoost < 1.0f)
+		{
+			scaleDir = 0.005f;
+		}
+		scaleBoost += scaleDir;
+		
+		int desiredHearts = player.maxHealth / 4;
+		// Check if we need to add heart objects
+		// This code is a mess...
+		GameObject heartContainerObject = GameObject.Find("Health");
+		if (heartContainerObject.transform.childCount != desiredHearts || playerOldHearts != player.health)
+		{
+			for (int i = 0; i < heartContainerObject.transform.childCount; i++)
+			{
+				GameObject.DestroyObject(heartContainerObject.transform.GetChild(i).gameObject);
+			}
+			for (int i = 0; i < desiredHearts; i++)
+			{
+				GameObject heartObject = new GameObject("Heart " + i);
+				heartObject.transform.parent = heartContainerObject.transform;
+				heartObject.transform.localPosition = new Vector3(0.0f + ((i % 10) * 0.415f), 0.0f - ((i / 10) * 0.415f), 0.0f);
+				heartObject.transform.localRotation = Quaternion.identity;
+				heartObject.transform.localScale = baseScale;
+				SpriteRenderer spriteRenderer = heartObject.AddComponent<SpriteRenderer>();
+				if (i > (player.health / 4))
+				{
+					spriteRenderer.sprite = Resources.Load<Sprite>("Data/Gameplay/Textures/Hearts/0-4 Heart1");
+					Debug.Log("Upper " + i);
+				}
+				else
+					if (i == (player.health / 4))
+				{
+					switch (player.health % 4)
+					{
+					case 0:
+						spriteRenderer.sprite = Resources.Load<Sprite>("Data/Gameplay/Textures/Hearts/0-4 Heart1");
+						break;
+					case 1:
+						spriteRenderer.sprite = Resources.Load<Sprite>("Data/Gameplay/Textures/Hearts/1-4 Heart1");
+						break;
+					case 2:
+						spriteRenderer.sprite = Resources.Load<Sprite>("Data/Gameplay/Textures/Hearts/2-4 Heart1");
+						break;
+					case 3:
+						spriteRenderer.sprite = Resources.Load<Sprite>("Data/Gameplay/Textures/Hearts/3-4 Heart1");
+						break;
+					case 4:
+						spriteRenderer.sprite = Resources.Load<Sprite>("Data/Gameplay/Textures/Hearts/0-4 Heart1");
+						break;
+					}
+				}
+				else
+				{
+					spriteRenderer.sprite = Resources.Load<Sprite>("Data/Gameplay/Textures/Hearts/4-4 Heart1");
+					Debug.Log(i);
+				}
+				spriteRenderer.renderer.material.shader = Resources.Load<Shader>("Data/Gameplay/Shaders/Sprite");
+				spriteRenderer.renderer.material.SetColor("_Color", new Color32(253, 98, 98, 255));
+				heartObject.layer = 5;
+			}
+		}
+		playerOldHearts = player.health;
+		// Make the last heart scale dynamically
+		//Debug.Log(((float)player.health / 4));
+		GameObject lastHeart = GameObject.Find("Heart " + Mathf.CeilToInt(((float)player.health / 4) - 1));
+		if (lastHeart == null)
+			return;
+		lastHeart.transform.localScale = baseScale * scaleBoost;
 	}
 }
