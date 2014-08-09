@@ -1,67 +1,14 @@
 fileFormatVersion: 2
-guid: a2c15a7f5bac9e645bae8719a792061b
+guid: 45068f42b498d344fbbe075d156d6aa6
 ModelImporter:
   serializedVersion: 16
   fileIDToRecycleName:
-    100000: limb_00
-    100002: limb_01
-    100004: limb_02
-    100006: limb_03
-    100008: limb_04
-    100010: limb_05
-    100012: limb_06
-    100014: limb_07
-    100016: limb_08
-    100018: limb_09
-    100020: limb_10
-    100022: limb_11
-    100024: limb_12
-    100026: limb_13
-    100028: limb_14
-    100030: limb_15
-    100032: limb_16
-    100034: limb_17
-    100036: limb_18
-    100038: limb_19
-    100040: limb_20
-    100042: //RootNode
-    100044: ob_06010A38
-    100046: ob_06011D68
-    100048: ob_06034FA0
-    100050: sk_060377F4
-    400000: limb_00
-    400002: limb_01
-    400004: limb_02
-    400006: limb_03
-    400008: limb_04
-    400010: limb_05
-    400012: limb_06
-    400014: limb_07
-    400016: limb_08
-    400018: limb_09
-    400020: limb_10
-    400022: limb_11
-    400024: limb_12
-    400026: limb_13
-    400028: limb_14
-    400030: limb_15
-    400032: limb_16
-    400034: limb_17
-    400036: limb_18
-    400038: limb_19
-    400040: limb_20
-    400042: //RootNode
-    400044: ob_06010A38
-    400046: ob_06011D68
-    400048: ob_06034FA0
-    400050: sk_060377F4
-    4300000: ob_06034FA0
-    4300002: ob_06011D68
-    4300004: ob_06010A38
+    100000: //RootNode
+    400000: //RootNode
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: Skybox
     9500000: //RootNode
-    13700000: ob_06010A38
-    13700002: ob_06011D68
-    13700004: ob_06034FA0
   materials:
     importMaterials: 1
     materialName: 0
@@ -81,7 +28,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: .00999999978
+    globalScale: 1
     meshCompression: 0
     addColliders: 0
     importBlendShapes: 1
