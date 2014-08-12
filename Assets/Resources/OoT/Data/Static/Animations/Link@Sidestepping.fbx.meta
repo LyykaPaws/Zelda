@@ -1,0 +1,224 @@
+fileFormatVersion: 2
+guid: 05c57c5dbbe6a46478fa077bbdc1cd24
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: limb_00
+    100002: limb_01
+    100004: limb_02
+    100006: limb_03
+    100008: limb_04
+    100010: limb_05
+    100012: limb_06
+    100014: limb_07
+    100016: limb_08
+    100018: limb_09
+    100020: limb_10
+    100022: limb_11
+    100024: limb_12
+    100026: limb_13
+    100028: limb_14
+    100030: limb_15
+    100032: limb_16
+    100034: limb_17
+    100036: limb_18
+    100038: limb_19
+    100040: limb_20
+    100042: //RootNode
+    100044: sk_060377F4
+    400000: limb_00
+    400002: limb_01
+    400004: limb_02
+    400006: limb_03
+    400008: limb_04
+    400010: limb_05
+    400012: limb_06
+    400014: limb_07
+    400016: limb_08
+    400018: limb_09
+    400020: limb_10
+    400022: limb_11
+    400024: limb_12
+    400026: limb_13
+    400028: limb_14
+    400030: limb_15
+    400032: limb_16
+    400034: limb_17
+    400036: limb_18
+    400038: limb_19
+    400040: limb_20
+    400042: //RootNode
+    400044: sk_060377F4
+    7400000: Sidestepping
+    7400002: sk_060377F4Action //// sk_060377F4
+    7400004: sk_060377F4Action //// limb_00
+    7400006: sk_060377F4Action //// limb_01
+    7400008: sk_060377F4Action //// limb_02
+    7400010: sk_060377F4Action //// limb_03
+    7400012: sk_060377F4Action //// limb_04
+    7400014: sk_060377F4Action //// limb_05
+    7400016: sk_060377F4Action //// limb_06
+    7400018: sk_060377F4Action //// limb_07
+    7400020: sk_060377F4Action //// limb_08
+    7400022: sk_060377F4Action //// limb_09
+    7400024: sk_060377F4Action //// limb_10
+    7400026: sk_060377F4Action //// limb_11
+    7400028: sk_060377F4Action //// limb_12
+    7400030: sk_060377F4Action //// limb_13
+    7400032: sk_060377F4Action //// limb_14
+    7400034: sk_060377F4Action //// limb_15
+    7400036: sk_060377F4Action //// limb_16
+    7400038: sk_060377F4Action //// limb_17
+    7400040: sk_060377F4Action //// limb_18
+    7400042: sk_060377F4Action //// limb_19
+    7400044: sk_060377F4Action //// limb_20
+    9500000: //RootNode
+    11100000: //RootNode
+    11100002: limb_00
+    11100004: limb_01
+    11100006: limb_02
+    11100008: limb_03
+    11100010: limb_04
+    11100012: limb_05
+    11100014: limb_06
+    11100016: limb_07
+    11100018: limb_08
+    11100020: limb_09
+    11100022: limb_10
+    11100024: limb_11
+    11100026: limb_12
+    11100028: limb_13
+    11100030: limb_14
+    11100032: limb_15
+    11100034: limb_16
+    11100036: limb_17
+    11100038: limb_18
+    11100040: limb_19
+    11100042: limb_20
+    11100044: sk_060377F4
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Sidestepping
+      takeName: sk_060377F4Action
+      firstFrame: 0
+      lastFrame: 15
+      wrapMode: 2
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: sk_060377F4
+        weight: 1
+      - path: sk_060377F4/limb_00
+        weight: 1
+      - path: sk_060377F4/limb_00/limb_01
+        weight: 1
+      - path: sk_060377F4/limb_00/limb_01/limb_02
+        weight: 1
+      - path: sk_060377F4/limb_00/limb_01/limb_02/limb_03
+        weight: 1
+      - path: sk_060377F4/limb_00/limb_01/limb_02/limb_03/limb_04
+        weight: 1
+      - path: sk_060377F4/limb_00/limb_01/limb_02/limb_03/limb_04/limb_05
+        weight: 1
+      - path: sk_060377F4/limb_00/limb_01/limb_02/limb_06
+        weight: 1
+      - path: sk_060377F4/limb_00/limb_01/limb_02/limb_06/limb_07
+        weight: 1
+      - path: sk_060377F4/limb_00/limb_01/limb_02/limb_06/limb_07/limb_08
+        weight: 1
+      - path: sk_060377F4/limb_00/limb_09
+        weight: 1
+      - path: sk_060377F4/limb_00/limb_09/limb_10
+        weight: 1
+      - path: sk_060377F4/limb_00/limb_09/limb_10/limb_11
+        weight: 1
+      - path: sk_060377F4/limb_00/limb_09/limb_12
+        weight: 1
+      - path: sk_060377F4/limb_00/limb_09/limb_13
+        weight: 1
+      - path: sk_060377F4/limb_00/limb_09/limb_13/limb_14
+        weight: 1
+      - path: sk_060377F4/limb_00/limb_09/limb_13/limb_14/limb_15
+        weight: 1
+      - path: sk_060377F4/limb_00/limb_09/limb_16
+        weight: 1
+      - path: sk_060377F4/limb_00/limb_09/limb_16/limb_17
+        weight: 1
+      - path: sk_060377F4/limb_00/limb_09/limb_16/limb_17/limb_18
+        weight: 1
+      - path: sk_060377F4/limb_00/limb_09/limb_19
+        weight: 1
+      - path: sk_060377F4/limb_00/limb_09/limb_20
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .00999999978
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 1
+  additionalBone: 0
+  userData: 
