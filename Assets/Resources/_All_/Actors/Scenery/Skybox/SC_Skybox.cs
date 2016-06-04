@@ -39,7 +39,7 @@ public class SC_Skybox : MonoBehaviour
 
 	public void SetSkybox(float blend, Material skybox1, Material skybox2)
 	{
-		foreach (Material mtl in transform.renderer.materials)
+		foreach (Material mtl in transform.GetComponent<Renderer>().materials)
 		{
 			string texName = "_" + mtl.name.Replace(" (Instance)","").Substring(6) + "Tex";
 			mtl.SetFloat("_Blend", blend);

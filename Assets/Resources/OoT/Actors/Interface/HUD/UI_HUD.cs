@@ -278,8 +278,8 @@ public class UI_HUD : MonoBehaviour
 					spriteRenderer.sprite = GameEngine.GetSprite(GameEngine.GetActorPath("OoT:UI_HUD"), "4-4 Heart1");
                         Debug.Log(i);
                     }
-                spriteRenderer.renderer.material.shader = Resources.Load<Shader>("_All_/Data/Static/Shaders/Default/Sprite");
-                spriteRenderer.renderer.material.SetColor("_Color", new Color32(253, 98, 98, 255));
+                spriteRenderer.GetComponent<Renderer>().material.shader = Resources.Load<Shader>("_All_/Data/Static/Shaders/Default/Sprite");
+                spriteRenderer.GetComponent<Renderer>().material.SetColor("_Color", new Color32(253, 98, 98, 255));
                 heartObject.layer = 5;
             }
         }

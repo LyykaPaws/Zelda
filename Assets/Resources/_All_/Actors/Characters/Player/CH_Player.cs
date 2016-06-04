@@ -37,7 +37,7 @@ public class CH_Player : MonoBehaviour
 			GameObject.Destroy(gameObject);
 			return;
 		}
-		mainCamera = GameObject.Find("Position/DefaultCam").camera;
+		mainCamera = GameObject.Find("Position/DefaultCam").GetComponent<Camera>();
 		cameraController = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<SC_Camera>();
 		lastPosition = transform.position;
 		maxHealth = 76;
@@ -58,8 +58,8 @@ public class CH_Player : MonoBehaviour
 		switch (state)
 		{
 			case LinkStates.Idle:
-				transform.GetChild(0).animation["Idle"].speed = 1.0f;
-				transform.GetChild(0).animation.Play("Idle");
+				transform.GetChild(0).GetComponent<Animation>()["Idle"].speed = 1.0f;
+				transform.GetChild(0).GetComponent<Animation>().Play("Idle");
 				UpdateIdle();
 				break;
 			case LinkStates.Running:
@@ -69,24 +69,24 @@ public class CH_Player : MonoBehaviour
 					float h = Input.GetAxis("H-Axis");
 					if (h < -.5f)
 					{
-						transform.GetChild(0).animation["SidestepL"].speed = 1.5f;
-						transform.GetChild(0).animation.Play("SidestepL");
+						transform.GetChild(0).GetComponent<Animation>()["SidestepL"].speed = 1.5f;
+						transform.GetChild(0).GetComponent<Animation>().Play("SidestepL");
 					}
 					else if (h > .5f)
 					{
-						transform.GetChild(0).animation["SidestepR"].speed = 1.5f;
-						transform.GetChild(0).animation.Play("SidestepR");
+						transform.GetChild(0).GetComponent<Animation>()["SidestepR"].speed = 1.5f;
+						transform.GetChild(0).GetComponent<Animation>().Play("SidestepR");
 					}
 					else
 					{
-						transform.GetChild(0).animation["Run"].speed = 1.5f;
-						transform.GetChild(0).animation.Play("Run");
+						transform.GetChild(0).GetComponent<Animation>()["Run"].speed = 1.5f;
+						transform.GetChild(0).GetComponent<Animation>().Play("Run");
 					}
 				}
 				else
 				{
-					transform.GetChild(0).animation["Run"].speed = 1.5f;
-					transform.GetChild(0).animation.Play("Run");
+					transform.GetChild(0).GetComponent<Animation>()["Run"].speed = 1.5f;
+					transform.GetChild(0).GetComponent<Animation>().Play("Run");
 				}
 				UpdateRunning();
 				break;

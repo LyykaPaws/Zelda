@@ -16,7 +16,7 @@ public class AnimationFix : AssetPostprocessor
 		ModelImporter mi = (ModelImporter)assetImporter;
 		if (mi.animationType == ModelImporterAnimationType.Legacy)
 		{
-			clip = go.animation.clip;
+			clip = go.GetComponent<Animation>().clip;
 			RemoveKeys(go.transform.GetChild(0), "", true);
 		}
 	}

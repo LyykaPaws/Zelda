@@ -370,7 +370,7 @@ public class GameEngine : MonoBehaviour
 			if (clip != null)
 			{
 				context.audioSource.clip = clip;
-				if (!context.audio.isPlaying)
+				if (!context.GetComponent<AudioSource>().isPlaying)
 					context.audioSource.Play();
 			}
 			else
