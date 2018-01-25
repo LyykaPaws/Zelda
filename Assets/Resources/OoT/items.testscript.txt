@@ -1,0 +1,29 @@
+INVENTORY:
+
+ class Inventory 
+ {
+     private List<Item> items = new List<Item>();
+     private Dictionary<string, Item> itemPresets = new Dictionary<string, Item>();
+     // Presets (Prototypes) are meant to be predefined instances that are later 
+     // copied to actual instances for game use. Set these in your init,
+     // like hardcoded, or from a file...
+     public void SetPreset(string name, Item preset)
+     {
+         itemPresets[name] = preset;
+     }
+ 
+     public Item AddNew(string name)
+     {
+         Item preset = itemPresets[name]; // Get the preset
+ 
+         Item newItem = new Item(preset); // Create a clone, 
+                                          // I opted for a copy constructor...
+ 
+         items.Add(newItem);              // Register to database
+ 
+         return newItem;                  // And return it since you probably
+                                          // want to use it immediately.
+     }
+ }
+ 
+ 
