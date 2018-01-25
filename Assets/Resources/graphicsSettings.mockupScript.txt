@@ -1,0 +1,17 @@
+// At some point, this script setup will have to be changed to C#, but for now, javascript will work.
+
+var qualityLevel = QualitySettings.GetQualityLevel ();
+var displayModels;
+var audioModels;
+if (qualityLevel = 0) { //Quality Level 0 == N64 Era Graphics
+  displayModels = 0;
+  audioModels = 0;
+}
+else if (qualityLevel = 1) { // Quality Level 1 == 3DS Era Graphics
+  displayModels = 1;
+  audioModels = 1;
+}
+else if (qualityLevel = 2) { // Quality Level 2 == Custom Graphics
+  displayModels = 2;
+  audioModels = 2;
+};
