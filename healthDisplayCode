@@ -1,0 +1,77 @@
+
+ 
+    void DrawHearts()
+    {
+        if (scaleBoost > 1.2f)
+        {
+            scaleDir = -0.5f;
+        }
+        if (scaleBoost < 1.0f)
+        {
+            scaleDir = 0.5f;
+        }
+        scaleBoost += scaleDir * Time.deltaTime;
+ 
+        int desiredHearts = player.maxHealth / 4;
+        // Check if we need to add heart objects
+        // This code is a mess...
+        GameObject heartContainerObject = GameObject.Find("Health");
+        if (heartContainerObject.transform.childCount != desiredHearts || playerOldHearts != player.health)
+        {
+            for (int i = 0; i < heartContainerObject.transform.childCount; i++)
+            {
+                GameObject.DestroyObject(heartContainerObject.transform.GetChild(i).gameObject);
+            }
+            for (int i = 0; i < desiredHearts; i++)
+            {
+                GameObject heartObject = new GameObject("Heart " + i);
+                heartObject.transform.parent = heartContainerObject.transform;
+                heartObject.transform.localPosition = new Vector3(0.0f + ((i % 10) * 0.415f), 0.0f - ((i / 10) * 0.415f), 0.0f);
+                heartObject.transform.localRotation = Quaternion.identity;
+                heartObject.transform.localScale = baseScale;
+                SpriteRenderer spriteRenderer = heartObject.AddComponent<SpriteRenderer>();
+				if (i > (player.health / 4))
+                {
+                    spriteRenderer.sprite = GameEngine.GetSprite(GameEngine.GetActorPath("OoT:UI_HUD"), "0-4 Heart1");
+                    Debug.Log("Upper " + i);
+                }
+                else if (i == (player.health / 4))
+                    {
+                        switch (player.health % 4)
+                        {
+                            case 0:
+							spriteRenderer.sprite = GameEngine.GetSprite(GameEngine.GetActorPath("OoT:UI_HUD"), "0-4 Heart1");
+                                break;
+                            case 1:
+							spriteRenderer.sprite = GameEngine.GetSprite(GameEngine.GetActorPath("OoT:UI_HUD"), "1-4 Heart1");
+                                break;
+                            case 2:
+							spriteRenderer.sprite = GameEngine.GetSprite(GameEngine.GetActorPath("OoT:UI_HUD"), "2-4 Heart1");
+								break;
+                            case 3:
+							spriteRenderer.sprite = GameEngine.GetSprite(GameEngine.GetActorPath("OoT:UI_HUD"), "3-4 Heart1");
+                                break;
+                            case 4:
+							spriteRenderer.sprite = GameEngine.GetSprite(GameEngine.GetActorPath("OoT:UI_HUD"), "4-4 Heart1");
+                                break;
+                        }
+                    }
+                    else
+                    {
+					spriteRenderer.sprite = GameEngine.GetSprite(GameEngine.GetActorPath("OoT:UI_HUD"), "4-4 Heart1");
+                        Debug.Log(i);
+                    }
+                spriteRenderer.GetComponent<Renderer>().material.shader = Resources.Load<Shader>("_All_/Data/Static/Shaders/Default/Sprite");
+                spriteRenderer.GetComponent<Renderer>().material.SetColor("_Color", new Color32(253, 98, 98, 255));
+                heartObject.layer = 5;
+            }
+        }
+        playerOldHearts = player.health;
+        // Make the last heart scale dynamically
+        //Debug.Log(((float)player.health / 4));
+        GameObject lastHeart = GameObject.Find("Heart " + Mathf.CeilToInt(((float)player.health / 4) - 1));
+        if (lastHeart == null)
+            return;
+        lastHeart.transform.localScale = baseScale * scaleBoost;
+    }
+}
